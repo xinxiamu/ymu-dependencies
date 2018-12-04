@@ -8,6 +8,13 @@
     <name>ymu-dependencies</name>
     <description>常用依赖库。</description>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.5.RELEASE</version>
+        <relativePath/> <!--lookup parent from repository -->
+    </parent>
+
     <properties>
         <dubbo.version>2.5.3</dubbo.version>
         <swagger.version>2.6.1</swagger.version>
@@ -172,5 +179,16 @@
         </dependencies>
 
     </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 </project>
