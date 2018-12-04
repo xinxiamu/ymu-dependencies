@@ -1,23 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <!--<parent>
-        <groupId>com.ymu.spcselling</groupId>
-        <artifactId>spcselling-build</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-        <relativePath>..</relativePath>
-    </parent>-->
-    <groupId>com.ymu.spcselling</groupId>
-    <artifactId>spcselling-dependencies</artifactId>
+    <groupId>com.ymu</groupId>
+    <artifactId>ymu-dependencies</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>spcselling-dependencies</name>
+    <name>ymu-dependencies</name>
     <description>常用依赖库。</description>
 
     <properties>
         <dubbo.version>2.5.3</dubbo.version>
         <swagger.version>2.6.1</swagger.version>
-        <druid.version>1.0.25</druid.version>
+        <alibaba.druid.version>1.0.25</alibaba.druid.version>
         <mysql.connector.version>5.1.21</mysql.connector.version>
         <joda.time.version>2.9.7</joda.time.version>
         <guava.version>23.0</guava.version>
@@ -36,6 +30,7 @@
         <cglib.version>3.2.4</cglib.version>
         <asm-all.version>5.1</asm-all.version>
         <okhtt.version>3.9.1</okhtt.version>
+        <alibaba.easyexcel.version>1.0.0-RELEASE</alibaba.easyexcel.version>
     </properties>
 
     <dependencyManagement>
@@ -91,7 +86,14 @@
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
-                <version>${druid.version}</version>
+                <version>${alibaba.druid.version}</version>
+            </dependency>
+
+            <!-- 阿里巴巴数据源 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>1.1.0</version>
             </dependency>
 
             <!--日期，时间处理 -->
@@ -116,11 +118,11 @@
                 <version>${kaptcha.version}</version>
             </dependency>
 
-            <!-- -->
+            <!--excel处理库-->
             <dependency>
                 <groupId>com.alibaba</groupId>
-                <artifactId>druid-spring-boot-starter</artifactId>
-                <version>1.1.0</version>
+                <artifactId>easyexcel</artifactId>
+                <version>${alibaba.easyexcel.version}</version>
             </dependency>
 
             <!-- log4jdbc,打印sql语句 -->
