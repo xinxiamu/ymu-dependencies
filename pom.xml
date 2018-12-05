@@ -38,6 +38,11 @@
         <asm-all.version>5.1</asm-all.version>
         <okhtt.version>3.9.1</okhtt.version>
         <alibaba.easyexcel.version>1.0.0-RELEASE</alibaba.easyexcel.version>
+
+        <!--<spring-cloud.version>Dalston.RELEASE</spring-cloud.version>-->
+        <spring-cloud.version>Finchley.SR2</spring-cloud.version>
+        <!--<spring-cloud.version>Greenwich.M3</spring-cloud.version>-->
+        <ymu-dependencies.version>0.0.1-SNAPSHOT</ymu-dependencies.version>
     </properties>
 
     <dependencyManagement>
@@ -174,6 +179,15 @@
                 <groupId>org.ow2.asm</groupId>
                 <artifactId>asm-all</artifactId>
                 <version>${asm-all.version}</version>
+            </dependency>
+
+            <!-- spring cloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
 
         </dependencies>
