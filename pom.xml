@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.ymu</groupId>
     <artifactId>ymu-dependencies</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <packaging>pom</packaging>
     <name>ymu-dependencies</name>
     <description>常用依赖库。</description>
@@ -52,6 +52,8 @@
         <!--<spring-cloud.version>Dalston.RELEASE</spring-cloud.version>-->
         <spring-cloud.version>Finchley.SR2</spring-cloud.version>
         <!--<spring-cloud.version>Greenwich.M3</spring-cloud.version>-->
+
+        <nexus.url>http://119.145.41.171:8085</nexus.url>
     </properties>
 
     <dependencies>
@@ -357,5 +359,19 @@
         </dependencies>
 
     </dependencyManagement>
+
+    <!--mavne 发布-->
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>maven-snapshots</name>
+            <url>${nexus.url}/repository/maven-snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>repository</id>
+            <name>ymu-hosted</name>
+            <url>${nexus.url}/repository/ymu-hosted/</url>
+        </repository>
+    </distributionManagement>
 
 </project>
