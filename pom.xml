@@ -28,7 +28,6 @@
         <apache.common.io.version>2.6</apache.common.io.version>
         <apache.common.lang.version>2.6</apache.common.lang.version>
         <apache.common.collections4.version>4.0</apache.common.collections4.version>
-        <apache.common.codec.version>1.10</apache.common.codec.version>
         <log4jdbc.version>1.16</log4jdbc.version>
         <lombok.version>1.16.18</lombok.version>
         <jsoup.version>1.11.1</jsoup.version>
@@ -55,11 +54,6 @@
 
         <nexus.url>http://119.145.41.171:8085</nexus.url>
     </properties>
-
-    <dependencies>
-
-
-    </dependencies>
 
     <dependencyManagement>
         <dependencies>
@@ -88,13 +82,6 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-collections4</artifactId>
                 <version>${apache.common.collections4.version}</version>
-            </dependency>
-
-            <!-- apache 编码，解码的库 -->
-            <dependency>
-                <groupId>commons-codec</groupId>
-                <artifactId>commons-codec</artifactId>
-                <version>${apache.common.codec.version}</version>
             </dependency>
 
             <dependency>
@@ -344,7 +331,6 @@
             <dependency>
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
-                <version>${commons-codec.version}</version>
             </dependency>
 
             <!-- spring cloud -->
@@ -360,39 +346,10 @@
 
     </dependencyManagement>
 
-    <repositories>
-        <!--自己私仓,下载jar-->
-        <repository>
-            <id>ymu-public</id>
-            <name>ymu nexus</name>
-            <url>http://119.145.41.171:8085/repository/maven-public/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </repository>
-    </repositories>
-
-    <pluginRepositories>
-        <!--私服，插件-->
-        <pluginRepository>
-            <id>ymu-public</id>
-            <name>ymu nexus</name>
-            <url>http://119.145.41.171:8085/repository/maven-public/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </pluginRepository>
-    </pluginRepositories>
-
     <!--mavne 发布-->
     <distributionManagement>
         <snapshotRepository>
+            <!--这里id要和maven的setting.xml中配置的一致-->
             <id>snapshots</id>
             <name>maven-snapshots</name>
             <url>${nexus.url}/repository/maven-snapshots/</url>
